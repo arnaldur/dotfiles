@@ -1,4 +1,4 @@
-### Collection of dotfiles
+# Collection of dotfiles
 
 
 ## .bash_profile
