@@ -11,6 +11,10 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 alias ls='ls -GFh'
 alias ll='ls -l'
 
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
 function username {
   if [ "$(whoami)" = "arnaldurhilmisson" ]; then echo "👻"
     else echo "$(whoami)"
@@ -21,30 +25,31 @@ function auto_virtualenv {
     local current_pwd="$(pwd -P)"
     if [ -n "$VENV_ROOT" ] && [[ $current_pwd != *"$VENV_ROOT"* ]]; then
 	local env=$(basename $VENV_ROOT)	
-        echo "Exiting $env"
+        echo "Deactivating virtualenv $env"
 	unset "VENV_ROOT"
 	deactivate
+	prompt
     fi
     
     # need to echo the env name here for the prompt
     if [ -n "$VENV_ROOT" ]; then
 	local env=$(basename $VENV_ROOT)	
-	echo "$env"
     fi
 
     if [ -e ".venv" ]; then
         # Check to see if already activated to avoid redundant activating
         if [ "$VIRTUAL_ENV" != "$current_pwd/.venv" ]; then
             local base_name=$(basename $current_pwd)
-            echo Activating virtualenv \"$base_name\"...
+            echo "Activating virtualenv $base_name".
             VIRTUAL_ENV_DISABLE_PROMPT=1
             source .venv/bin/activate
             export "VENV_ROOT=$current_pwd"
-	    echo $base_name
-        fi
+            prompt "($base_name) "	    
+      fi
     fi
 }
 
+# This function is to create the prompt
 function prompt {
   local BLACK="\[\033[0;30m\]"
   local BLACKBOLD="\[\033[1;30m\]"
@@ -65,13 +70,11 @@ function prompt {
   local RESETCOLOR="\[\e[00m\]"
 
 
-  export PS1="\n$RED$(username) $PURPLE@ $GREEN\w$RESETCOLOR$GREEN → $RESETCOLOR"
+  export PS1="$WHITEBOLD $1$RED$(username) $PURPLE@ $GREEN\w$RESETCOLOR$GREEN → $RESETCOLOR"
   export PS2=" | → $RESETCOLOR"
 }
 
-PROMPT_COMMAND="node /usr/local/lib/node_modules/git-aware-terminal/bin/gat.js"
-PROMPT_COMMAND="auto_virtualenv; $PROMPT_COMMAND"
+PROMPT_COMMAND="node /usr/local/lib/node_modules/git-aware-terminal/bin/gat.js; auto_virtualenv"
 
-# Activate the prompt
+# Activate the prompt this is only run once, during the loading of the shell
 prompt
-
