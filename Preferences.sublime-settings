@@ -1,0 +1,23 @@
+{
+    "color_scheme": "Packages/User/predawn (Flake8Lint).tmTheme",
+    "ignored_packages": [],
+    "folder_exclude_patterns":
+    [
+        "Godeps",
+        "node_modules",
+        "vendor",
+        ".svn",
+        ".git",
+        ".hg",
+        ".cabal-sandbox",
+        "dist",
+        "__pycache__"
+    ],
+    "predawn_tabs_active_underline": false,
+    "predawn_tabs_medium": true,
+    "theme": "predawn-DEV.sublime-theme",
+    "line_padding_bottom": 1,
+    "line_padding_top": 2,
+    "trim_trailing_white_space_on_save": true,
+}
+

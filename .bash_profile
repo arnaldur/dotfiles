@@ -30,11 +30,6 @@ function auto_virtualenv {
 	deactivate
 	prompt
     fi
-    
-    # need to echo the env name here for the prompt
-    if [ -n "$VENV_ROOT" ]; then
-	local env=$(basename $VENV_ROOT)	
-    fi
 
     if [ -e ".venv" ]; then
         # Check to see if already activated to avoid redundant activating
@@ -44,8 +39,9 @@ function auto_virtualenv {
             VIRTUAL_ENV_DISABLE_PROMPT=1
             source .venv/bin/activate
             export "VENV_ROOT=$current_pwd"
-            prompt "($base_name) "	    
-      fi
+            prompt "($base_name) "
+	    echo -ne "\033]0;"$base_name"\007"	 
+        fi
     fi
 }
 
