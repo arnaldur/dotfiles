@@ -1,0 +1,6 @@
+[
+    { "keys": ["ctrl+minus"], "command": "prev_view" },
+    { "keys": ["ctrl+shift+minus"], "command": "next_view" },
+    { "keys": ["super+alt+left"], "command": "jump_back" },
+    { "keys": ["super+alt+right"], "command": "jump_forward" },
+]

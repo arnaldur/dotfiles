@@ -1,0 +1,31 @@
+{
+	"color_scheme": "Packages/User/predawn (Flake8Lint).tmTheme",
+	"folder_exclude_patterns":
+	[
+		".cache",
+		".ssh",
+		"__pycache__",
+		".venv",
+		".svn",
+		".git",
+		".hg",
+		"CVS"
+	],
+	"font_size": 15,
+	"ignored_packages":
+	[
+		"Kite",
+		"SublimeCodeIntel"
+	],
+	"line_padding_bottom": 2,
+	"line_padding_top": 3,
+	"mdpopups.use_sublime_highlighter": true,
+	"predawn_tabs_active_underline": false,
+	"predawn_tabs_medium": true,
+	"scroll_past_end": true,
+	"show_definitions": true,
+	"tab_size": 4,
+	"theme": "predawn-DEV.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}
