@@ -6,14 +6,17 @@
 # Brew install deps
 brew install node
 brew install neovim
+brew install fzf
 
 # Secondary level deps
 npm install -g git-aware-terminal
 
 # Install shell scripts
 cp .bash_profile ~
+cp .bashrc ~
 cp .vimrc ~
 cp .git-completion.bash
+cp .gitconfig ~
 cp -r .config ~
 
 # Sublime 3 config files

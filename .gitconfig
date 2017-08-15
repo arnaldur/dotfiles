@@ -1,0 +1,8 @@
+[user]
+	name = Arnaldur Hilmisson
+	email = arnaldur@lifesum.com
+
+[alias]
+	co = checkout
+	cm = commit
+	s = status
