@@ -8,6 +8,8 @@ brew install node
 brew install neovim
 brew install fzf
 
+$(brew --prefix)/opt/fzf/install
+
 # Secondary level deps
 npm install -g git-aware-terminal
 
