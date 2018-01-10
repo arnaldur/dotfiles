@@ -3,11 +3,15 @@
 # My collection of environment config stuff
 # for MacOS
 
+# Install brew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 # Brew install deps
 brew install node
 brew install neovim
 brew install fzf
 brew install ripgrep
+brew install node
 
 # Bash shortcuts for FZF
 $(brew --prefix)/opt/fzf/install
