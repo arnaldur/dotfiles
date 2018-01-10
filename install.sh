@@ -7,7 +7,9 @@
 brew install node
 brew install neovim
 brew install fzf
+brew install ripgrep
 
+# Bash shortcuts for FZF
 $(brew --prefix)/opt/fzf/install
 
 # Secondary level deps
