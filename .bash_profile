@@ -19,6 +19,22 @@ alias ll='ls -l'
 alias vi='nvim'
 alias vim='nvim'
 
+tab-color() {
+    echo -ne "\033]6;1;bg;red;brightness;$1\a"
+    echo -ne "\033]6;1;bg;green;brightness;$2\a"
+    echo -ne "\033]6;1;bg;blue;brightness;$3\a"
+}
+
+tab-reset() {
+    echo -ne "\033]6;1;bg;*;default\a"
+}
+
+# Bash history setup
+shopt -s histappend
+set HISTFILESIZE=1000000
+set HISTSIZE=1000000
+set HISTCONTROL=ignoreboth
+
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
