@@ -20,12 +20,12 @@ $(brew --prefix)/opt/fzf/install
 npm install -g git-aware-terminal
 
 # Install shell scripts
-cp .bash_profile ~
-cp .bashrc ~
-cp .vimrc ~
+cp bash_profile ~/.bash_profile
+cp bashrc ~/.bashrc
+
 cp .git-completion.bash
 cp .gitconfig ~
-cp -r .config ~
+cp -r config ~/.config
 
 # Sublime 3 config files
 cp -r sublime_user/* ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/

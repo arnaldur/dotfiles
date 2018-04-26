@@ -31,9 +31,10 @@ tab-reset() {
 
 # Bash history setup
 shopt -s histappend
-set HISTFILESIZE=1000000
-set HISTSIZE=1000000
-set HISTCONTROL=ignoreboth
+HISTFILESIZE=1000000
+HISTSIZE=1000000
+HISTCONTROL=ignoreboth:erasedups
+HISTIGNORE="$HISTIGNORE:jrnl *:ls:ls -la"
 
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
@@ -98,3 +99,6 @@ PROMPT_COMMAND="node /usr/local/lib/node_modules/git-aware-terminal/bin/gat.js; 
 
 # Activate the prompt this is only run once, during the loading of the shell
 prompt
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
