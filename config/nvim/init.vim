@@ -53,6 +53,9 @@ let g:ale_sign_warning = '⚠'
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 
+" airline config
+let g:airline#extensions#tabline#enabled = 1
+
 " markdown config
 let g:markdown_enable_spell_checking = 0
 

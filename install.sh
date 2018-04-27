@@ -23,8 +23,8 @@ npm install -g git-aware-terminal
 cp bash_profile ~/.bash_profile
 cp bashrc ~/.bashrc
 
-cp .git-completion.bash
-cp .gitconfig ~
+cp git_completion ~/.git-completion.bash
+cp gitconfig ~/.gitconfig
 cp -r config ~/.config
 
 # Sublime 3 config files

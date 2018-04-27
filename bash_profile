@@ -95,7 +95,7 @@ function prompt {
   export PS2=" | → $RESETCOLOR"
 }
 
-PROMPT_COMMAND="node /usr/local/lib/node_modules/git-aware-terminal/bin/gat.js; auto_virtualenv"
+PROMPT_COMMAND="node /usr/local/lib/node_modules/git-aware-terminal/bin/gat.js; auto_virtualenv; history -a; history -c; history -r;"
 
 # Activate the prompt this is only run once, during the loading of the shell
 prompt
